@@ -7,10 +7,11 @@ exports.handler = function (event, context, callback) {
 
 
 	kinesis.describeStream({
-		StreamName: 'MyKStream'
+		StreamName: 'MyKStream',
+		Limit: 1
 	}).promise()
 		.then(describeStreamData => {
-			callback(null,describeStreamData );
+			callback(null, describeStreamData);
 			console.log(describeStreamData);
 		})
 		.catch(err => {
