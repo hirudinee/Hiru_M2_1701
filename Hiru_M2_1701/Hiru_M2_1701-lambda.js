@@ -24,10 +24,12 @@ exports.handler = function (event, context, callback) {
 		StreamName: 'Hiru_stream'
 	}).promise()
 		.then(describeStreamData => {
-			// your logic goes here
+			callback(null, describeStreamData);
+			console.log(describeStreamData);
 		})
 		.catch(err => {
-			// error handling goes here
+			callback(null, err);
+			console.log(err);
 		});
 
 
