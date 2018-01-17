@@ -6,18 +6,30 @@ const kinesis = new AWS.Kinesis();
 exports.handler = function (event, context, callback) {
 
 
+	// kinesis.describeStream({
+	// 	StreamName: 'MyKStream',
+	// 	Limit: 1
+	// }).promise()
+	// 	.then(describeStreamData => {
+	// 		callback(null, describeStreamData);
+	// 		console.log(describeStreamData);
+	// 	})
+	// 	.catch(err => {
+	// 		callback(null, err);
+	// 		console.log(err);
+	// 	});
+
+
 	kinesis.describeStream({
-		StreamName: 'MyKStream',
-		Limit: 1
+		StreamName: 'Hiru_stream'
 	}).promise()
 		.then(describeStreamData => {
-			callback(null, describeStreamData);
-			console.log(describeStreamData);
+			// your logic goes here
 		})
 		.catch(err => {
-			callback(null, err);
-			console.log(err);
+			// error handling goes here
 		});
+
 
 
 	//callback(null, 'Successfully executed');
