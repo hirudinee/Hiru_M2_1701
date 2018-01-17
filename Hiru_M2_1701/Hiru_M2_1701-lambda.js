@@ -25,11 +25,11 @@ exports.handler = function (event, context, callback) {
 	}).promise()
 		.then(describeStreamData => {
 			callback(null, describeStreamData);
-			console.log(describeStreamData);
+			console.log('Data',describeStreamData);
 		})
 		.catch(err => {
 			callback(null, err);
-			console.log(err);
+			console.log('Error',err);
 		});
 
 
